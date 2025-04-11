@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surveiller un système d’information sécurisé</title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <button class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Présentation</a></li>
+        <li><a href="../formation.html">Formation</a></li>
+        <li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../certification.html">Certification</a></li>
+        <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="../projets.html">Projets personnels</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="presentation" class="project-presentation">
+        <h1>Surveiller un système d’information sécurisé</h1>
+        <p align = justify><b>Projet : SAÉ 3.03 - Concevoir un réseau informatique sécurisé multi-sites</b></p>
+        <br>
+        <p align="justify"><b>Contexte :</b> <br>Dans le cadre de la SAÉ 3.03, nous avons conçu un réseau informatique pour connecter deux sites distants d’une entreprise. Le projet visait à implémenter des solutions sécurisées et performantes sur des équipements Cisco, en utilisant la simulation du logiciel Packet Tracer. Nous avons ainsi travaillé sur des aspects techniques variés, tels que la sécurité des échanges, la segmentation du réseau, le déploiement de services réseau et la gestion de la QoS.</p>
+        <br>
+        <p>Pour plus d'informations : voir la section détails de la SAÉ</p>
+      </section>
+      
+      <section id="sections">
+        <div class="sections-grid">
+          <div class="section-card" onclick="toggleDetails('section1')">
+            <h2>Apprentissages</h2>
+            <div class="section-details" id="section1">
+              <p align="justify">Les <b>apprentissages</b> travaillés au cours de cette SAE, en lien avec la compétence <b>'Administrer un système d'information sécurisé'</b> sont : </p>
+              <br>
+              <ul style="margin-left: 20px;">
+                <li>Configurer et dépanner le routage dynamique dans un réseau</li>
+                <li>Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d’un réseau</li>
+                <li>Comprendre des documents techniques en anglais</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section2')">
+            <h2>Ressources mobilisées</h2>
+            <div class="section-details" id="section2">
+              <ol style="margin-left: 20px;">
+                <li><b>Mode simulation de Packet Tracer:</b></li>
+                <p align="justify">Utilisation pour simuler les communications sur le réseaux et la surveillance. Cela a permis de vérifier les tags VLAN 802.1Q et les protocoles de téléphonie sans avoir besoin de matériel physique.</p>
+                <br>
+                <li><b>Cours de Réseaux, protocoles réseaux et téléphonies :</b></li>
+                <p align="justify">Afin de comprendre et analyser les trames réseaux et les communications sécurisées, les cours suivis en réseaux, abordant notamment les protocoles et la téléphonie ont été nécessaires.</p>
+                <br>
+                <li><b>Documentation Internet :</b></li>
+                <p align="justify">Utilisation d'Internet pour rechercher les informations supplémentaires nécessaires.</p>              </ol>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section3')">
+            <h2>Trace</h2>
+            <div class="section-details" id="section3">
+                <p align="justify">Pour illustrer la compétence 'Surveiller un système d'information sécurisé', j'ai analysé les tags VLAN 802.1Q et les protocoles de téléphonie pour m'assurer que les communications étaient correctement segmentées et sécurisées.</p>
+                <br>
+                <p><b>Analyse des tags VLAN 802.1Q : </b></p>
+                <p align="justify">Afin de vérifier la segmentation correcte du réseau, j'ai analysé les trames entre les équipements de deux sites. En regardant les tags VLAN 802.1Q, j'ai pu confirmer que les paquets étaient correctement étiquetés avec keys bons VLANs. Cela assure que les paquets restent dans leur segments de réseaux respectifs et garantit que les communications sensibles ne traversent pas les segments non autorisés.</p>
+                <br>
+                <p align="justify">Pour cela, j’ai fait un ping entre 2 équipements de sites différents : un softphone sur le VLAN 307 et un laptop utilisateur dans le VLAN 107. J’ai récupéré la première trame entre la couche d’accès réseau et la couche de distribution.</p>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="../img/Surveiller-TagsVLAN1.png" alt="Description de l'image" width="450" height="auto">
+                </div>
+                <br>
+                <p align="justify">Étant donné que le VLAN correspond aux 12 derniers bits du champs TCI, j’ai cherché la traduction du champ en binaire : 0000 0001 0011 0011. Cela signifie que le VLAN de l’équipement qui a envoyé ce paquet est le VLAN « 0001 0011 0011 » en binaire, soit le VLAN 307. En effet, c’est bien du softphone que j’ai effectué le ping. J’ai également regardé une fois le paquet arrivé sur l’autre site, car le VLAN 307 n’existe pas sur le site de l'équipement de destination</p>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="../img/Surveiller-TagsVLAN2.png" alt="Description de l'image" width="450" height="auto">
+                </div>
+                <br>
+                <p align="justify">Cette fois-ci, le champ TCI vaut 0000 0000 0110 1011 en binaire. Le VLAN correspondant est donc le VLAN 107. Ce dernier correspond bien au VLAN de l’équipement de destination.</p>
+                <br>
+                <p align="justify"><b>Surveillance des protocoles de téléphonie :</b></p>
+                <br>
+                <p align="justify">J'ai également surveillé les protocoles de téléphonie utilisés dans le réseau. En filtrant les trames associées à ces protocoles, j'ai vérifié que les communications vocales étaient correctement transmises et sécurisées.</p>
+                <br>
+                <p align="justify">En mode simulation sur Packet Tracer, j'ai commencé par lancé un appel intra-site. J'ai pu voir que le téléphone appelant établissait sa connexion à l'aide du protocole <b>SCCP</b>. </p>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="../img/Surveiller-ToIP_1.png" alt="Description de l'image" width="450" height="auto">
+                </div>
+                <br>
+                <p align="justify">Le type 6 nous indique bien que la connexion n'est pas encore établit. Ce protocole est utilisé durant toute la phase de connexion.</p>
+                <br>
+                <p align="justify">J'ai ensuite lancé un appel inter-sites. C'est de nouveau le protocole SCCP qui initie la connexion sur le site appelant. Cependant pour la connexion entre les deux serveur ToIP des deux sites, c'est la protocoles <b>H.323</b> qui est utilisé. En effet le port de H.323 est 1720.</p>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="../img/Surveiller-ToIP_2.png" alt="Description de l'image" width="450" height="auto">
+                </div>
+                <br>
+                <p align="justify">En ce qui concerne <b>la voix</b>, c'est toujours le protocole <b>RTP</b> qui est utilisé.</p>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="../img/Surveiller-ToIP_3.png" alt="Description de l'image" width="450" height="auto">
+                </div>
+                <p align="justify">Cette trace prouve que je sais <b>surveiller des communications réseaux pour vérifier la sécurisation des échanges</b>, en prenant en compte les différents protocoles et standards.</p>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section4')">
+            <h2>Difficultés rencontrées</h2>
+            <div class="section-details" id="section4">
+              <p align="justify">Au cours de cette SAÉ, je n'ai pas rencontré de difficultés particulières concernant la surveillance des trames et la détection des anomalies. Les outils et méthodes vu en TP précédemment se sont avérés efficaces pour vérifier la sécurité des communications réseau.</p>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section5')">
+            <h2>Axes d'amélioration</h2>
+            <div class="section-details" id="section5">
+              <ol style="margin-left: 20px;">
+                <li><b>Réalisation avec du vrai matériel :</b></li>
+                <p align="justify">Il serait intéressant, dans le cadre d'un projet ou en entreprise, de surveiller un réseau avec de vrais équipements, plutôt qu'en simulation. Cela permettrait de prendre en compte tous les cas possibles et de voir des situations qui ne peuvent pas être testé en simulation.</p>
+                <br>
+                <li><b>Veille technologique :</b></li>
+                <p align="justify">Regarder régulièrement les nouvelles technologies et continuer d'approfondir les connaissances sur les protocoles réseaux serait bénéfique. Cela permettrait de rester à jour avec les évolutions technologiques et de repérer plus facilement toutes les anomalies ou menaces potentielles.</p>
+            </ol>
+            </div>
+          </div>
+  
+          
+          <div class="section-card" onclick="toggleDetails('section6')">
+            <h2>Détails de la SAÉ</h2>
+            <div class="section-details" id="section6">
+              <p align="justify">L'objectif de la SAÉ était de concevoir et de sécuriser l'architecture réseau d'une entreprise, comprenant les éléments suivants : </p>
+              <br>
+              <ul style="margin-left: 20px;">
+                <li align="justify"><b>Sécurisation des échanges</b> : Mise en place de tunnels IPSec pour assurer la confidentialité des données entre les sites.</li>
+                <li align="justify"><b>Segmentation du réseau </b>: Création de VLANs distincts (Data, VoIP, WiFi, Management) pour une meilleure gestion et sécurité des flux.</li>
+                <li align="justify"><b>Services réseau</b> : Déploiement de serveurs DHCP et de points d’accès WiFi sécurisés en WPA2 Enterprise.</li>
+                <li align="justify"><b>Communication inter-sites </b>: Intégration de solutions de ToIP avec Cisco CME et H.323 pour assurer une communication fluide.</li>
+                <li align="justify"><b>Contrôle des accès </b>: Application de listes de contrôle d’accès (ACLs) pour filtrer les flux indésirables.</li>
+                <li align="justify"><b>Gestion des flux </b>: Mise en place de la Qualité de Service (QoS) avec des marquages CoS et DSCP pour optimiser les communications.</li>
+              </ul>
+              <br>
+              <p align="justify">Cette SAÉ a été effectué seule, en simulation sur l'outils Packet Tracer. Nous avons mis en place une infrastructure, composée de 2 sites : </p>
+              <br>
+              <div style="display: flex; justify-content: center;">
+                <img src="../img/DetailsSaeReseaux.png" alt="Description de l'image" width="600" height="auto">
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Mon Projet. Tous droits réservés.</p>
+    </footer>
+
+    <script type="module">
+      // Toggle menu mobile
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // Toggle section details
+      window.toggleDetails = function(id) {
+        const element = document.getElementById(id);
+        const allDetails = document.querySelectorAll('.section-details');
+        
+        allDetails.forEach(detail => {
+          if (detail.id !== id) {
+            detail.classList.remove('active');
+          }
+        });
+        
+        element.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>
