@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer des outils et applications informatiques pour les R&T</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <button class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Présentation</a></li>
+        <li><a href="../formation.html">Formation</a></li>
+        <li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../certification.html">Certification</a></li>
+        <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="../projets.html">Projets personnels</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="presentation" class="project-presentation">
+        <h1>Créer des outils et applications informatiques pour les R&T</h1>
+        <p align = justify><b>Projet : SAÉ 3.02 - Développer une application informatique utilisant des algorithmes de graphes</b></p>
+        <br>
+        <p align="justify"><b>Contexte :</b> <br>Dans le cadre de la SAÉ 3.02, nous avons développer une application informatique utilisant des algorithmes de graphes afin d'optimiser un réseau dans un cas spécifique. Cette SAÉ vise à renforcer les compétences en programmation, notamment en Python, tout en appliquant la théorie des graphes à des cas pratiques d'optimisation. Nous avions le choix entre divers sujets, allant de l'allocation des canaux WiFi à l'optimisation des coûts de liaisons WAN.</p>
+        <br>
+        <p>Pour plus d'informations : voir la section détails de la SAÉ</p>
+      </section>
+      
+      <section id="sections">
+        <div class="sections-grid">
+          <div class="section-card" onclick="toggleDetails('section1')">
+            <h2>Apprentissages</h2>
+            <div class="section-details" id="section1">
+              <p align="justify">Les <b>apprentissages</b> travaillés au cours de cette SAE, en lien avec la compétence <b>'Créer des outils et applications informatiques pour les R&T'</b> sont : </p>
+              <br>
+              <ul style="margin-left: 20px;">
+                <li>Travailler en équipe pour developper ses compétences profesionnelles</li>
+                <li>Capacité à questionner un cahier des charges R&T</li>
+                <li>Developper une application à partir d'un cahier des charges donné</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section2')">
+            <h2>Ressources mobilisées</h2>
+            <div class="section-details" id="section2">
+              <ol style="margin-left: 20px;">
+                <li><b>Cours de programmation :</b></li>
+                <p align="justify">Utilisation de Python pour développer des outils et applications informatiques.</p>
+                <br>
+                <li><b>Cours d'algorithmique des graphes :</b></li>
+                <p align="justify">Utilisés pour acquérir les bases nécessaires à la modélisation et au fonctionnement des algorithmes de graphes</p>
+                <br>
+                <li><b>Documentation Internet :</b></li>
+                <p align="justify">Utilisée pour rechercher des informations supplémentaires et les différentes bibliothèques.</p>
+                <br>
+                <li><b>Collaboration :</b></li>
+                <p align="justify">Discussions et entraide avec mon binome pour mener à bien le projet.</p>
+              </ol>
+
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section3')">
+            <h2>Trace</h2>
+            <div class="section-details" id="section3">
+                <p align="justify">Notre projet était de créer une application qui pouvait recevoir un réseau WiFi et déterminer le type des différents access point (AP) de manière optimisé. Les trois types d'AP envisageable était : </p>
+                <br>
+                <ul style="margin-left: 20px;">
+                    <li>Les <b>Contrôleurs</b> qui reçoivent les informations de contrôle en filaire puis les transmettent aux autres AP de la zone en WiFi.</li>
+                    <li>Les <b>Simples</b> qui sont uniquement destinés à la connexion des utilisateurs.</li>
+                    <li>Les <b>Relais</b> qui permettent de relayer les informations de contrôle entre le contrôleur de la zone et les autres APs.</li>
+                </ul>
+                <br>
+                <p align="justify">Les trois types d’AP ayant des caractéristiques différentes, le <b>coût</b> était à prendre en compte. L’<b>optimisation</b> a ainsi été faite au niveau des APs contrôleurs qui sont à minimiser et des APs relais qui, dans une moindre mesure, le sont aussi.</p>
+                <br>
+                <p align="justify">L’objectif était donc de développer un logiciel, qui, à partir d’un fichier d’entrée contenant <b>les coordonnées cartésiennes des APs et de leur portée</b>, déterminait les zones et le type des APs, contrôleur, relais ou bien simple. Cela donnait ainsi lieu à un <b>graphique de la topologie</b> avec les APs, représentés par l'icône de leur type et la couleur de leur zone.</p>
+                <br>
+                <br>
+                <p>Avant même la création de l'application, nous avons commencé par une étape primordiale : la modélisation. Pour cela, nous avons schématisé tous les cas de réseaux WiFi speciaux que nous pourrions obtenir afin de determiner les algorithmes et l'ordre du code pour une application d'optimisation. Pour cela, nous avons commencé par faire du réseau WiFi un graphe orienté, partant d'un AP vers les APs se trouvant dans sa portée.</p>
+                <br>
+                <p>Dans un premier temps, nous avons le cas le plus simple :</p>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="../img/info-casideal.png" alt="" width="600" height="auto">
+                </div>
+                <br>
+                <p align="justify">Dans ce cas, nous sommes dans un <b>cas "idéal"</b> où il y a une seule <b>source</b>, qui sera considéré comme un AP controleur, et un ou plusieurs <b>puit(s)</b>, qui sera/seront considéré comme des APs simples. Les autres seront automatiquement des APs relais.</p>
+                <br>
+                <p align="justify">Dans ce cas de cas non-idéal, le graphe n'est <b>pas connexe</b>. Un ou plusieurs APs peuvent être isolés.</p>
+                <br>
+                <div style="display: flex; justify-content: center;">
+                    <img src="../img/info-nonconnexe.png" alt="" width="600" height="auto">
+                </div>
+                <br>
+                <p align="justify">En effet, dans ce cas, il y a <b>plusieurs sources</b>. Pour cela, nous avons fait le choix de rechercher <b>les différentes composantes connexes</b> afin de pouvoir réaliser le programme en partant de chacune des sources.  </p>
+                <br>
+                <p align="justify">Cette trace prouve que je sais effectuer la modélisation pour pouvoir coder une application, et que je suis capable de me poser les bonnes questions pour différencier les cas, pour une application obtimisée.</p>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section4')">
+            <h2>Difficultés rencontrées</h2>
+            <div class="section-details" id="section4">
+              <ol style="margin-left: 20px;">
+                <li><b>Modélisation :</b></li>
+                <p align="justify">La modélisation du réseau sous forme de graphes orientés et non orientés a nécessité une bonne compréhension des algorithmes de graphes.</p>
+                <br>
+                <li><b>Algorithmique : </b></li>
+                <p align="justify">La programmation de l'algorithme pour automatiser la détermination des types d'AP a été compliqué, demandant une bonne maîtrise des parcours en profondeur et en largeur, ainsi que des composantes fortement connexes.</p>
+                <br>
+                <li><b>Gestion des cas complexes :</b></li>
+                <p align="justify">Gérer les différents cas où n'est pas connexe ou ne possède pas de sommet source a demandé beaucoup d'attention pour s'assurer que l'algorithme fonctionnait correctement dans toutes les situations.</p>
+              </ol>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section5')">
+            <h2>Axes d'amélioration</h2>
+            <div class="section-details" id="section5">
+                <ol style="margin-left: 20px;">
+                    <li><b>Optimisation de l'application :</b></li>
+                    <p align="justify">Améliorer l'efficacité de l'algorithme pour gérer des graphes plus complexes et volumineux.</p>
+                    <br>
+                    <li><b>Tests supplémentaires :</b></li>
+                    <p align="justify">Effectuer des tests supplémentaires sur une plus grande variété de cas pour garantir que l'outil fonctionne correctement dans toutes les situations possibles.</p>
+                </ol>
+  
+            </div>
+          </div>
+  
+          
+          <div class="section-card" onclick="toggleDetails('section6')">
+            <h2>Détails de la SAÉ</h2>
+            <div class="section-details" id="section6">
+              <p align="justify">L'objectif de cette SAÉ était de développer un outil informatique utilisant des algorithmes de graphes pour optimiser l'infrastructure réseau, en répondant à des problématiques concrètes. </p>
+              <br>
+              <ol style="margin-left: 20px;">
+                <li><b>Problématique Professionnelle :</b></li>
+                <p align="justify">Les professionnels en Réseaux et Télécommunications (R&T) doivent souvent optimiser les infrastructures réseau pour améliorer les performances et faciliter le travail quotidien. La modélisation par graphes permet de développer des outils d'optimisation adaptés à ces besoins.</p>
+                <br>
+                <li><b>Développement d'Applications :</b></li>
+                <p align="justify">Conception et développement d'outils informatiques pour optimiser divers aspects des infrastructures réseau, tels que le déploiement de bornes WiFi, la répartition de charge, et la minimisation des coûts d'installation.</p>
+                <br>
+                <li><b>Utilisation de la Théorie des Graphes :</b></li>
+                <p align="justify">Application des algorithmes de graphes pour modéliser et résoudre des problèmes d'optimisation réseau, comme la minimisation des coûts de liaisons WAN ou l'allocation des canaux WiFi.</p>
+                <br>
+                <li><b>Projets Pratiques :</b></li>
+                <p align="justify">Réalisation de projets concrets tels que l'implantation d'un réseau de caméras de surveillance, l'optimisation du débit MPLS, et la détermination des positions optimales pour les récepteurs dans un réseau de capteurs.</p>
+                <br>
+                <li><b>Collaboration et Gestion de Projet :</b></li>
+                <p align="justify">Travail en équipe pour développer des solutions informatiques répondant aux besoins spécifiques des R&T, en utilisant des méthodes de gestion de projet pour organiser et planifier les tâches.</p>
+              </ol>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Mon Projet. Tous droits réservés.</p>
+    </footer>
+
+    <script type="module">
+      // Toggle menu mobile
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // Toggle section details
+      window.toggleDetails = function(id) {
+        const element = document.getElementById(id);
+        const allDetails = document.querySelectorAll('.section-details');
+        
+        allDetails.forEach(detail => {
+          if (detail.id !== id) {
+            detail.classList.remove('active');
+          }
+        });
+        
+        element.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>

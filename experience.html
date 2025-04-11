@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expérience - Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Présentation</a></li>
+            <li><a href="formation.html">Formation</a></li>
+            <li><a href="experience.html" class="active">Expérience</a></li>
+            <li><a href="certification.html">Certification</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="projets.html">Projets personnels</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="experience">
+            <h1>Expériences Professionnelles</h1>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Stage</h3>
+                        <span class="date">A venir</span>
+                    </div>
+                    <h4>💼 A2MI, La Rochelle</h4>
+                    <br>
+                    <ul style="margin-left: 20px;">
+                        <li>Mise en place d’infrastructure réseaux</li>
+                        <li>Maintenance</li>
+                        <li>Sécurisation</li>
+                    </ul>
+                </div>
+                <!--<div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Développeur Front-end</h3>
+                        <span class="date">2020 - 2022</span>
+                    </div>
+                    <h4>Startup Innovante</h4>
+                    <ul>
+                        <li>Création d'interfaces utilisateur</li>
+                        <li>Intégration de designs</li>
+                        <li>Optimisation mobile</li>
+                    </ul> 
+                </div>-->
+            </div>
+        </section>
+
+        <section class="experience">
+            <h1>Expériences Complémentaires</h1>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Team étudiante</h3>
+                        <span class="date">2025</span>
+                    </div>
+                    <h4>💼 Université de La Rochelle</h4>
+                    <br>
+                    <ul style="margin-left: 20px;">
+                        <li align="justify">Présentation du BUT Réseaux et Télécommunications, parcours Cybersécurité de La Rochhelle lors de salons étudiants de Charente-Maritime</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Serveuse en restauration </h3>
+                        <span class="date">été 2023 & 2024 + extra</span>
+                    </div>
+                    <h4>💼 Le Verre Luisant, La Rochelle</h4>
+                    <br>
+                    <ul style="margin-left: 20px;">
+                        <li>Travail en équipe</li>
+                        <li>Sens du service et de l'écoute</li>
+                        <li>Gestion du stress et de la pression</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Garance Cieutat. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

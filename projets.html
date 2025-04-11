@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projets - Mon Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            Styles pour les popups
+            .popup-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            .popup-content {
+                background-color: white;
+                padding: 30px;
+                border-radius: 10px;
+                max-width: 800px;
+                width: 90%;
+                max-height: 90vh;
+                overflow-y: auto;
+                position: relative;
+            }
+            
+            .close-popup {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                font-size: 24px;
+                cursor: pointer;
+                font-weight: bold;
+                color: #333;
+            }
+            
+            .popup-content h2 {
+                margin-top: 0;
+                color: #2c3e50;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+            
+            .popup-content h3 {
+                color: #2980b9;
+                margin-top: 20px;
+            }
+            
+            .popup-content ul {
+                padding-left: 20px;
+                margin: 10px 0;
+            }
+            
+            .popup-content li {
+                margin-bottom: 8px;
+            }
+            .image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-image-popup {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+            .project-card {
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+            
+            .project-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .tech-tag {
+                display: inline-block;
+                background-color: #e0f7fa;
+                color: #00838f;
+                padding: 3px 8px;
+                border-radius: 15px;
+                font-size: 0.8em;
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Présentation</a></li>
+                <li><a href="formation.html">Formation</a></li>
+                <li><a href="experience.html">Expérience</a></li>
+                <li><a href="certification.html">Certification</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="projets.html" class="active">Projets personnels</a></li>
+            </ul>
+        </nav>
+    
+        <main>
+            <section class="portfolio">
+                <h1>Projets Personnels</h1>
+                <div class="projects-grid">
+                    <div class="project-card" id="jfmf-card">
+                        <img src="img/jfmf.png" alt="Concours Je Filme Ma Formation" class="project-image">
+                        <div class="project-info">
+                            <h3>Concours Je Filme Ma Formation</h3>
+                            <p>Vidéo promotionnelle pour le BUT Réseaux et Télécommunications.</p>
+                            <div class="project-tags">
+                                <span class="tech-tag">Vidéo</span>
+                                <span class="tech-tag">Communication</span>
+                                <span class="tech-tag">Équipe</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" id="mars-hack-card">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop" alt="Mars@Hack 2025" class="project-image">
+                        <div class="project-info">
+                            <h3>Mars@Hack 2025</h3>
+                            <p>Compétition de cybersécurité avec multiples défis techniques.</p>
+                            <div class="project-tags">
+                                <span class="tech-tag">Web</span>
+                                <span class="tech-tag">Forensic</span>
+                                <span class="tech-tag">OSINT</span>
+                                <span class="tech-tag">CTF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Popup pour JFMF -->
+        <div class="popup-overlay" id="jfmfPopup">
+            <div class="popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Concours Je Filme Ma Formation</h2>
+                <p><strong>Année :</strong> 2025</p>
+                <!--############################################### IMAGE VA LA ####################################-->
+                <img src="img/jfmf-photo.jpeg" alt="Projet JFMF" class="project-image-popup">
+                
+                <h3>Description :</h3>
+                <p>Participation au concours national "Je Filme Ma Formation" avec la création d'une vidéo de 3 minutes présentant le BUT Réseaux et Télécommunications, parcours Cybersécurité de l'IUT de La Rochelle.</p> 
+                
+                <h3>Objectifs du projet :</h3>
+                <ul>
+                    <li>Promouvoir la formation auprès des futurs étudiants</li>
+                    <li>Mettre en avant les spécificités du parcours cybersécurité</li>
+                    <li>Illustrer la vie étudiante à l'IUT de la Rochelle</li>
+                </ul>
+                
+                <h3>Tâches réalisées :</h3>
+                <ul>
+                    <li>Écriture du scénario et storyboard</li>
+                    <li>Organisation des tournages</li>
+                    <li>Tournage des séquences vidéo</li>
+                    <li>Interviews d'étudiants et enseignants</li>
+                    <li>Montage vidéo avec Adobe Premiere Pro</li>
+                </ul>
+                
+                <h3>Compétences développées :</h3>
+                <ul>
+                    <li>Travail d'équipe et coordination</li>
+                    <li>Communication digitale</li>
+                    <li>Gestion de projet audiovisuel</li>
+                    <li>Techniques de montage vidéo</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Popup pour Mars@Hack 2025 -->
+        <div class="popup-overlay" id="marsHackPopup">
+            <div class="popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Mars@Hack 2025</h2>
+                <p><strong>Date :</strong> Mars 2025 | <strong>Type :</strong> Capture The Flag (CTF)</p>
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&fit=crop" alt="Mars@Hack 2025" class="project-image-popup">
+                
+                <h3>Description :</h3>
+                <p>Participation à une compétition de cybersécurité Mars@Hack 2025 avec différents types de défis : web, forensic, OSINT et warmup. Cette expérience intensive a permis de mettre en pratique mes connaissances en sécurité informatique.</p>
+                
+                <h3>Défis réalisés :</h3>
+                
+                <h4>🌐 Défis Web :</h4>
+                <ul>
+                    <li>Exploitation de vulnérabilités XSS et SQLi</li>
+                    <li>Analyse de code source et reverse engineering</li>
+                    <li>Détournement de sessions utilisateurs</li>
+                    <li>Exploitation de failles CSRF</li>
+                </ul>
+                
+                <h4>🔍 Forensic :</h4>
+                <ul>
+                    <li>Analyse de fichiers suspects (binaries, images, logs)</li>
+                    <li>Récupération de données supprimées</li>
+                    <li>Analyse mémoire (RAM dump)</li>
+                    <li>Stéganographie (dissimulation d'information)</li>
+                </ul>
+                
+                <h4>🕵️‍♀️ OSINT :</h4>
+                <ul>
+                    <li>Recherche d'informations publiques</li>
+                    <li>Analyse de métadonnées</li>
+                    <li>Investigation sur les réseaux sociaux</li>
+                    <li>Géolocalisation d'images</li>
+                </ul>
+                
+                <h4>🔥 Warmup :</h4>
+                <ul>
+                    <li>Déchiffrement de messages codés</li>
+                    <li>Résolution d'énigmes logiques</li>
+                    <li>Manipulation de bases de données</li>
+                    <li>Scripting Python pour automatisation</li>
+                </ul>
+                
+                <h3>Outils utilisés :</h3>
+                <div class="project-tags">
+                    <span class="tech-tag">Burp Suite</span>
+                    <span class="tech-tag">Wireshark</span>
+                    <span class="tech-tag">Autopsy</span>
+                    <span class="tech-tag">Binwalk</span>
+                    <span class="tech-tag">Metasploit</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OSINT Framework</span>
+                    <span class="tech-tag">John the Ripper</span>
+                </div>
+                
+                <h3>Compétences acquises :</h3>
+                <ul>
+                    <li>Pensée critique et résolution de problèmes</li>
+                    <li>Travail sous pression avec délais serrés</li>
+                    <li>Collaboration en équipe</li>
+                    <li>Recherche et documentation techniques</li>
+                    <li>Analyse de vulnérabilités</li>
+                </ul>
+            </div>
+        </div>
+    
+        <footer>
+            <p>&copy; 2024 Garance Cieutat. Tous droits réservés.</p>
+        </footer>
+    
+        <script>
+            // Menu toggle
+            document.querySelector('.nav-toggle').addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.toggle('active');
+            });
+            
+            // Gestion des popups
+            const jfmfCard = document.getElementById('jfmf-card');
+            const marsHackCard = document.getElementById('mars-hack-card');
+            const jfmfPopup = document.getElementById('jfmfPopup');
+            const marsHackPopup = document.getElementById('marsHackPopup');
+            
+            jfmfCard.addEventListener('click', () => {
+                jfmfPopup.classList.add('active');
+            });
+            
+            marsHackCard.addEventListener('click', () => {
+                marsHackPopup.classList.add('active');
+            });
+            
+            // Fermeture des popups
+            document.querySelectorAll('.close-popup').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.closest('.popup-overlay').classList.remove('active');
+                });
+            });
+            
+            // Fermer en cliquant à l'extérieur
+            document.querySelectorAll('.popup-overlay').forEach(popup => {
+                popup.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

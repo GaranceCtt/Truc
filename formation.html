@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation - Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Présentation</a></li>
+            <li><a href="formation.html" class="active">Formation</a></li>
+            <li><a href="experience.html">Expérience</a></li>
+            <li><a href="certification.html">Certification</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="projets.html">Projets personnels</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="formation">
+            <h1>Formation</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Actuellement</h3>
+                        <h4>BUT Réseaux et Télécommunications, parcours cybersécurité</h4>
+                        <p>📍 IUT de La Rochelle</p>
+                        <p>🔍 Formation formant des techniciens supérieurs compétents dans la conception, le déploiement, l’administration, la supervision et la sécurisation des réseaux et télécommunications</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2023</h3>
+                        <h4>Baccalauréat technologique STI2D</h4>
+                        <p>📍 Lycée Les Pierres Vives, Carrières-sur-Seine</p>
+                        <p>🎓 Mention Bien</p>
+                        <p>🔍 Spécialité Sciences d'Information et Numérique</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2020</h3>
+                        <h4>Brevet des collèges</h4>
+                        <p>📍 Collège de la Mauldre, Maule</p>
+                        <p>🎓 Mention Bien</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Garance Cieutat. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

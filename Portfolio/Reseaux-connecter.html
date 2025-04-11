@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connecter les entreprises et les usagers</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <button class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Présentation</a></li>
+        <li><a href="../formation.html">Formation</a></li>
+        <li><a href="../experience.html">Expérience</a></li>
+        <li><a href="../certification.html">Certification</a></li>
+        <li><a href="../portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="../projets.html">Projets personnels</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="presentation" class="project-presentation">
+        <h1>Connecter les entreprises et les usagers</h1>
+        <p align = justify><b>Projet : SAÉ 3.03 - Concevoir un réseau informatique sécurisé multi-sites</b></p>
+        <br>
+        <p align="justify"><b>Contexte :</b> <br>Dans le cadre de la SAÉ 3.03, nous avons conçu un réseau informatique pour connecter deux sites distants d’une entreprise. Le projet visait à implémenter des solutions sécurisées et performantes sur des équipements Cisco, en utilisant la simulation du logiciel Packet Tracer. Nous avons ainsi travaillé sur des aspects techniques variés, tels que la sécurité des échanges, la segmentation du réseau, le déploiement de services réseau et la gestion de la QoS.</p>
+        <br>
+        <p>Pour plus d'informations : voir la section détails de la SAÉ</p>
+      </section>
+      
+      <section id="sections">
+        <div class="sections-grid">
+          <div class="section-card" onclick="toggleDetails('section1')">
+            <h2>Apprentissages</h2>
+            <div class="section-details" id="section1">
+              <p align="justify">Les <b>apprentissages</b> travaillés au cours de cette SAE, en lien avec la compétence <b>'Administrer un système d'information sécurisé'</b> sont : </p>
+              <br>
+              <ul style="margin-left: 20px;">
+                <li>Mettre en place un accès distant sécurisé</li>
+                <li>Mettre en place une connexion multi-site via un réseau opérateur</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section2')">
+            <h2>Ressources mobilisées</h2>
+            <div class="section-details" id="section2">
+              <p>Détails de la section 2</p>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section3')">
+            <h2>Trace</h2>
+            <div class="section-details" id="section3">
+              <p>...</p>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section4')">
+            <h2>Difficultés rencontrées</h2>
+            <div class="section-details" id="section4">
+              <p>Détails de la section 4</p>
+            </div>
+          </div>
+
+          <div class="section-card" onclick="toggleDetails('section5')">
+            <h2>Axes d'amélioration</h2>
+            <div class="section-details" id="section5">
+              <p>Détails de la section 4</p>
+            </div>
+          </div>
+  
+          
+          <div class="section-card" onclick="toggleDetails('section6')">
+            <h2>Détails de la SAÉ</h2>
+            <div class="section-details" id="section6">
+              <p align="justify">L'objectif était de concevoir et sécuriser l'architecture réseau d'une entreprise, comprenant les éléments suivants : </p>
+              <br>
+              <ul style="margin-left: 20px;">
+                <li align="justify"><b>Sécurisation des échanges</b> : Mise en place de tunnels IPSec pour assurer la confidentialité des données entre les sites.</li>
+                <li align="justify"><b>Segmentation du réseau </b>: Création de VLANs distincts (Data, VoIP, WiFi, Management) pour une meilleure gestion et sécurité des flux.</li>
+                <li align="justify"><b>Services réseau</b> : Déploiement de serveurs DHCP et de points d’accès WiFi sécurisés en WPA2 Enterprise.</li>
+                <li align="justify"><b>Communication inter-sites </b>: Intégration de solutions de ToIP avec Cisco CME et H.323 pour assurer une communication fluide.</li>
+                <li align="justify"><b>Contrôle des accès </b>: Application de listes de contrôle d’accès (ACLs) pour filtrer les flux indésirables.</li>
+                <li align="justify"><b>Gestion des flux </b>: Mise en place de la Qualité de Service (QoS) avec des marquages CoS et DSCP pour optimiser les communications.</li>
+              </ul>
+              <p align="justify">Cette SAÉ a été effectué seule, en simulation sur l'outils Packet Tracer. Nous avons mis en place une infrastructure, composée de 2 sites : </p>
+              <br>
+              <div style="display: flex; justify-content: center;">
+                <img src="../img/DetailsSaeReseaux.png" alt="Description de l'image" width="600" height="auto">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Mon Projet. Tous droits réservés.</p>
+    </footer>
+
+    <script type="module">
+      // Toggle menu mobile
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // Toggle section details
+      window.toggleDetails = function(id) {
+        const element = document.getElementById(id);
+        const allDetails = document.querySelectorAll('.section-details');
+        
+        allDetails.forEach(detail => {
+          if (detail.id !== id) {
+            detail.classList.remove('active');
+          }
+        });
+        
+        element.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>

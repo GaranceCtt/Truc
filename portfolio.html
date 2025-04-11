@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Présentation</a></li>
+            <li><a href="formation.html">Formation</a></li>
+            <li><a href="experience.html">Expérience</a></li>
+            <li><a href="certification.html">Certification</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="projets.html">Projets personnels</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="portfolio">
+            <h1>Portfolio</h1>
+            <h2 align="center">Point de vue : Réseaux</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="img/Accueil/Administrer.png" alt="Projet 1" class="project-image">
+                    <div class="project-info">
+                        <h3><a href="Portfolio/Reseaux-administrer.html" style="text-decoration:none" style="color:black">Administrer un système d’information sécurisé</a></h3>
+                        <p align="justify">Configurer et gérer des réseaux pour protéger les données et les communications.</p>
+                        <div class="project-tags">
+                            <span>VPN</span>
+                            <span>IPSec</span>
+                            <span>ACL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/Accueil/surveiller.png" alt="Projet 2" class="project-image">
+                    <div class="project-info">
+                        <h3><a href="Portfolio/Reseaux-surveiller.html"style="text-decoration:none" style="color:black">Surveiller un système d’information sécurisé</a></h3>
+                        <p align="justify">Analyser et vérifier la sécurité des échanges réseaux pour détecter les anomalies.</p>
+                        <div class="project-tags">
+                            <span>Simulation</span>
+                            <span>Trames</span>
+                            <span>Analyse</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h2 align="center">Point de vue : Informatique</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="img/Accueil/info.png" alt="Projet 1" class="project-image">
+                    <div class="project-info">
+                        <h3><a href="Portfolio/informatique-Créer.html" style="text-decoration:none" style="color:black">Créer des outils et applications informatiques pour les R&T</a></h3>
+                        <p align="justify">Développer des solutions informatiques innovantes pour optimiser les infrastructures réseau.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Modélisation</span>
+                            <span>Optimisation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h2 align="center">Point de vue : Cybersécurite</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="img/Accueil/surveiller.png" alt="Projet 1" class="project-image">
+                    <div class="project-info">
+                        <h3><a href="Portfolio/pentest-Surveiller.html" style="text-decoration:none" style="color:black">Surveiller un système d’information sécurisé</a></h3>
+                        <p align="justify">Analyser et vérifier la sécurité des échanges réseaux pour détecter les anomalies.</p>
+                        <div class="project-tags">
+                            <span>Pentest</span>
+                            <span>Outils</span>
+                            <span>Kali</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <h2 align="center">Point de vue : Télécommunications</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="img/Accueil/connecter (2).png" alt="Projet 1" class="project-image">
+                    <div class="project-info">
+                        <h3><a href="Portfolio/télécom-Connecter.html" style="text-decoration:none" style="color:black">Connecter les entreprises et les usagers</a></h3>
+                        <p align="justify">Relier efficacement les entreprises et les utilisateurs grâce à des solutions de connectivité innovantes et sécurisées.</p>
+                        <div class="project-tags">
+                            <span>GNSS</span>
+                            <span>Antenne</span>
+                            <span>Mesure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Garance Cieutat. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
